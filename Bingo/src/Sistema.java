@@ -37,6 +37,17 @@ public class Sistema {
 
         // Sorteio central
         Sorteio sorteio = new Sorteio(jogadores);
+
+
+
+        List<Thread> threadsJogadores = new ArrayList<>();
+        for (Jogador j : jogadores) {
+            Thread t = new Thread(j);
+            t.start();
+            threadsJogadores.add(t);
+        }
+
+// Inicie o sorteio
         Thread sorteioThread = new Thread(sorteio);
         sorteioThread.start();
 

@@ -14,7 +14,7 @@ public class Sorteio implements Runnable {
     }
 
     public void run() {
-        while (!numeros.isEmpty() && !PontuacaoGlobal.tresCartelasPremiadas) {
+        while (!numeros.isEmpty() && !PontuacaoGlobal.tresCartelasPremiadas.get()) {
             int numero = numeros.poll();
             sorteados.add(numero);
             System.out.println("\nNúmero sorteado: " + numero);
